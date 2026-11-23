@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "claude-code-swarm"
+version = "0.1.0"
+description = "Zero-Dependency Multi-Agent Orchestration Kernel, Git Worktree Isolator, SQLite WAL Lease Arbiter & Pre-Merge AST Gate for Parallel Claude Code Sessions"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Benni Alencar", email = "bennialencar@benni-os.net"},
+]
+keywords = [
+    "claude-code",
+    "anthropic",
+    "claude",
+    "mcp",
+    "model-context-protocol",
+    "multi-agent",
+    "git-worktree",
+    "ai-agents",
+    "python",
+    "benni-os",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+claude-swarm = "claude_code_swarm.cli:main"
+
+[project.urls]
+Homepage = "https://benni-os.net"
+Repository = "https://github.com/Benni-OS/claude-code-swarm"
+Issues = "https://github.com/Benni-OS/claude-code-swarm/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
